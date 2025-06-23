@@ -56,7 +56,7 @@ start_watchdog() {
         echo "$MSG" | tee -a "$LOG_FILE" | mail -s "[Watchdog] $SERVICE yeniden başlatıldı" "$EMAIL"
       fi
     done
-    sleep "${INTERVAL}m"
+    sleep "$((INTERVAL * 60))"
   done
 }
 
