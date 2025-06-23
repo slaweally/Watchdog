@@ -1,0 +1,10 @@
+select_language=Lütfen dil seçiniz:
+welcome_message=Watchdog'a hoş geldiniz - Akıllı Linux Servis İzleyici
+found_services=Çalışan servisler bulundu:
+select_services=Servis numaralarını virgülle ayırarak girin (örnek: 1,5,7):
+extra_services=Ek olarak el ile servis ismi yazmak ister misin? ENTER ile atla:
+email_prompt=Uyarılar için e-posta adresinizi girin:
+interval_prompt=Kontrol aralığı kaç dakika olsun? Varsayılan: 15:
+config_saved=✅ Yapılandırma kaydedildi. İzleme birazdan başlayacak.
+monitoring_started=🟢 İzleme başladı. Arkanıza yaslanın!
+service_ready=Watchdog servisi oluşturuldu. Çalıştırmak için:
