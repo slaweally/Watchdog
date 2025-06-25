@@ -1,5 +1,4 @@
-# Watchdog v3.1
-
+# Watchdog || Universal Linux Service Monitor
 **Watchdog** is a comprehensive Linux service monitoring and auto-recovery system that monitors system services, restarts them if they crash, and provides multiple notification methods including email, webhooks, and real-time alerts.
 
 [![License: MIT]
