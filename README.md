@@ -3,7 +3,7 @@
 
 [![License: MIT]
 
-## ✨ Features
+##  Features
 
 ### 🔧 **Core Monitoring**
 - ✅ **Service Monitoring**: Monitors selected system services and auto-restarts on failure
@@ -11,13 +11,13 @@
 - ✅ **System Health**: CPU load, RAM usage, and disk space monitoring
 - ✅ **Smart Recovery**: Intelligent restart mechanisms with failure tracking
 
-### 📧 **Multi-Channel Notifications**
+###  **Multi-Channel Notifications**
 - ✅ **Email**: Built-in mail system with auto-setup (sendmail/mailutils)
 - ✅ **Discord/Slack**: Webhook notifications
 - ✅ **Telegram**: Bot-based instant messaging
 - ✅ **System Logs**: Integration with systemd journal
 
-### 🚀 **Advanced Features**
+###  **Advanced Features**
 - ✅ **Auto-Update**: Self-updating from GitHub with version checking
 - ✅ **PID Management**: Single-instance protection with proper PID handling
 - ✅ **Backup/Restore**: Configuration backup and restore capabilities
@@ -25,13 +25,13 @@
 - ✅ **Multilingual**: English and Turkish language support
 - ✅ **Auto-Start**: Optional system boot integration
 
-### 🛡️ **Enterprise Ready**
+### 🛡 **Enterprise Ready**
 - ✅ **Single File**: No external dependencies, portable
 - ✅ **Systemd Integration**: Full systemd service support
 - ✅ **Security**: Safe restart mechanisms and error handling
 - ✅ **Lightweight**: Minimal resource usage
 
-## 🚀 Quick Installation
+##  Quick Installation
 
 ```bash
 # Download the latest version
@@ -50,21 +50,21 @@ chmod +x watchdog.sh
 ./watchdog.sh
 ```
 
-## 🎯 Setup Wizard
+##  Setup Wizard
 
 During the interactive setup, you'll configure:
 
-1. **🌍 Language Selection**: English or Turkish
-2. **📦 Service Selection**: 
+1. ** Language Selection**: English or Turkish
+2. ** Service Selection**: 
    - Individual services: `1,2,5,8`
    - All services: `all`
    - Custom services: Add manually
-3. **📧 Email Configuration**: Automatic mail system setup
-4. **📱 Additional Notifications**: Discord, Slack, Telegram
-5. **🚀 Auto-Start**: Enable automatic startup on boot
-6. **⏰ Monitoring Interval**: Check frequency in minutes
+3. ** Email Configuration**: Automatic mail system setup
+4. ** Additional Notifications**: Discord, Slack, Telegram
+5. ** Auto-Start**: Enable automatic startup on boot
+6. ** Monitoring Interval**: Check frequency in minutes
 
-## 📋 Usage Commands
+##  Usage Commands
 
 ### **Basic Operations**
 ```bash
@@ -96,7 +96,7 @@ tail -f ~/watchdog.log            # Live log monitoring
 journalctl -u watchdog -f         # Systemd logs
 ```
 
-## 📊 Sample Configuration
+##  Sample Configuration
 
 After setup, your configuration will include:
 
@@ -110,7 +110,7 @@ AUTOSTART="true"
 AUTO_UPDATE_CHECK="true"
 ```
 
-## 🔔 Notification Setup Examples
+##  Notification Setup Examples
 
 ### **Discord/Slack Webhook**
 1. Create a webhook in your Discord server or Slack workspace
@@ -127,7 +127,7 @@ AUTO_UPDATE_CHECK="true"
 - **CentOS/RHEL**: `sudo yum install mailx postfix`
 - The script will auto-configure basic mail functionality
 
-## 📈 Monitoring Capabilities
+##  Monitoring Capabilities
 
 ### **Service Monitoring**
 - Automatic restart of failed services
@@ -145,7 +145,7 @@ AUTO_UPDATE_CHECK="true"
 - 24-hour activity reports
 - System alert history
 
-## 📁 File Structure
+##  File Structure
 
 ```
 ~/.watchdog.conf              # Main configuration
@@ -155,7 +155,7 @@ AUTO_UPDATE_CHECK="true"
 ~/.watchdog_last_update_check # Update tracking
 ```
 
-## ⚡ System Requirements
+##  System Requirements
 
 - **OS**: Linux (any distribution)
 - **Shell**: Bash 5+
@@ -180,7 +180,7 @@ sudo yum install curl mailx
 sudo pacman -S curl mailutils
 ```
 
-## 🔄 Auto-Update System
+##  Auto-Update System
 
 Watchdog includes an intelligent auto-update system:
 
@@ -194,7 +194,7 @@ Force update check:
 ./watchdog.sh --upgrade
 ```
 
-## 🛡️ Security Features
+##  Security Features
 
 - **PID Protection**: Prevents multiple instances
 - **Safe Restarts**: Controlled service restart mechanisms  
@@ -202,7 +202,7 @@ Force update check:
 - **Permission Handling**: Proper user/group permissions
 - **Signal Handling**: Graceful shutdown on system signals
 
-## 🎨 Beautiful Interface
+##  Beautiful Interface
 
 Watchdog features a modern, colorful terminal interface with:
 - **ASCII Art Logo**: Professional branding
@@ -210,7 +210,7 @@ Watchdog features a modern, colorful terminal interface with:
 - **Progress Indicators**: Clear setup progress
 - **Formatted Tables**: Organized service listings
 
-## 🔧 Advanced Configuration
+##  Advanced Configuration
 
 ### **Custom Service Addition**
 ```bash
@@ -229,37 +229,37 @@ echo 'WEBHOOK_URL="https://discord.com/api/webhooks/..."' >> ~/.watchdog_notific
 - **Standard**: 15-30 minutes  
 - **Low-Priority**: 60+ minutes
 
-## 📊 Log Analysis Features
+##  Log Analysis Features
 
 The built-in log analyzer provides:
 
-- **📈 Restart Statistics**: Total successful/failed restarts
-- **🔄 Service Rankings**: Most problematic services
-- **📅 Activity Timeline**: Recent 24-hour activity
-- **⚠️ System Alerts**: Health monitoring alerts
-- **📋 Detailed Reports**: Comprehensive system overview
+- ** Restart Statistics**: Total successful/failed restarts
+- ** Service Rankings**: Most problematic services
+- ** Activity Timeline**: Recent 24-hour activity
+- ** System Alerts**: Health monitoring alerts
+- ** Detailed Reports**: Comprehensive system overview
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome contributions! Here's how you can help:
 
-- 🐛 **Bug Reports**: Submit issues with detailed descriptions
-- 💡 **Feature Requests**: Suggest new capabilities
-- 🔧 **Pull Requests**: Submit code improvements
-- 📖 **Documentation**: Help improve guides and examples
-- ⭐ **Star the Project**: Show your support
+-  **Bug Reports**: Submit issues with detailed descriptions
+-  **Feature Requests**: Suggest new capabilities
+-  **Pull Requests**: Submit code improvements
+-  **Documentation**: Help improve guides and examples
+-  **Star the Project**: Show your support
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 Support
+##  Support
 
 - **GitHub Issues**: [Report bugs or request features](https://github.com/slaweally/Watchdog/issues)
 - **Discussions**: [Community discussions and help](https://github.com/slaweally/Watchdog/discussions)
 - **Documentation**: Check this README and inline help (`--help`)
 
-## 🌟 Acknowledgments
+##  Acknowledgments
 
 - Built for system administrators and DevOps engineers
 - Inspired by the need for reliable service monitoring
