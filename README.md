@@ -25,7 +25,7 @@
 - ✅ **Multilingual**: English and Turkish language support
 - ✅ **Auto-Start**: Optional system boot integration
 
-### 🛡 **Enterprise Ready**
+### **Enterprise Ready**
 - ✅ **Single File**: No external dependencies, portable
 - ✅ **Systemd Integration**: Full systemd service support
 - ✅ **Security**: Safe restart mechanisms and error handling
