@@ -19,14 +19,17 @@ chmod +x watchdog.sh
 # Enable + start as a systemd service
 sudo systemctl enable watchdog
 sudo systemctl start watchdog
+
+# Optional: install global command so you can run 'watchdog' from anywhere
+sudo install -m 0755 watchdog.sh /usr/local/bin/watchdog
 ```
 
 ### Daily use
 ```bash
-./watchdog.sh --status     # Show monitored services & system health
-./watchdog.sh --test       # Send test notifications
-./watchdog.sh --logs       # Analyze recent logs
-./watchdog.sh --health     # One‑off system health check
+watchdog --status     # Show monitored services & system health
+watchdog --test       # Send test notifications
+watchdog --logs       # Analyze recent logs
+watchdog --health     # One‑off system health check
 
 # Systemd
 sudo systemctl start watchdog
@@ -38,10 +41,12 @@ Notes
 - The check interval (INTERVAL in minutes) applies to all monitored services.
 - Categories: critical/application/standard are restarted when down; optional/on‑demand are logged only.
 
+If you didn’t install the global command, run the same flags with the local script from its directory, e.g. `./watchdog.sh --status`.
+
 ### Update to latest
 Preferred:
 ```bash
-./watchdog.sh --update
+watchdog --update
 ```
 Manual (in place):
 ```bash
@@ -53,7 +58,7 @@ sudo systemctl start watchdog
 If you encounter issues after a major upgrade, re‑run the wizard:
 ```bash
 sudo systemctl stop watchdog
-./watchdog.sh
+watchdog || ./watchdog.sh
 sudo systemctl start watchdog
 ```
 
