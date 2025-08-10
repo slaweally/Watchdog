@@ -315,8 +315,6 @@ is_watchdog_running() {
 # 🔍 SERVICE DISCOVERY & CLASSIFICATION
 # ==================================================================================
 discover_services() {
-    print_status "info" "$(msg "service_discovery")"
-    
     # Get all running services
     local services=()
     mapfile -t services < <(systemctl list-units --type=service --state=running --no-pager --no-legend 2>/dev/null | \
@@ -1072,6 +1070,7 @@ setup_wizard() {
     print_status "success" "$(msg "found_services" "${#all_services[@]}")"
     
     # Categorize services
+    print_status "info" "$(msg "service_classification")"
     declare -A service_categories
     while IFS=':' read -r category services; do
         service_categories["$category"]="$services"
@@ -1310,7 +1309,6 @@ monitor_services() {
     # Setup signal handlers
     trap 'remove_pid_file; exit 0' EXIT INT TERM
     
-    print_status "success" "$(msg "monitoring_active" ${#all_monitored_services[@]})"
     log_message "INFO" "Watchdog v$VERSION daemon started"
     
     # Collect all services to monitor
@@ -1318,7 +1316,9 @@ monitor_services() {
     declare -A service_type_map
     
     for category in critical application socket-activated standard; do
-        local var_name="SERVICES_${category^^}"
+        local var_suffix
+        var_suffix=$(echo "$category" | tr '[:lower:]-' '[:upper:]_')
+        local var_name="SERVICES_${var_suffix}"
         local services_var="${!var_name}"
         if [[ -n "$services_var" ]]; then
             for service in $services_var; do
@@ -1329,6 +1329,7 @@ monitor_services() {
     done
     
     log_message "INFO" "Monitoring ${#all_monitored_services[@]} services: ${all_monitored_services[*]}"
+    print_status "success" "$(msg "monitoring_active" ${#all_monitored_services[@]})"
     
     local check_counter=0
     local update_check_counter=0
@@ -1457,7 +1458,9 @@ show_status() {
             # Count monitored services
             local total_services=0
             for category in critical application socket-activated standard; do
-                local var_name="SERVICES_${category^^}"
+                local var_suffix
+                var_suffix=$(echo "$category" | tr '[:lower:]-' '[:upper:]_')
+                local var_name="SERVICES_${var_suffix}"
                 local services_var="${!var_name}"
                 if [[ -n "$services_var" ]]; then
                     local services_array=($services_var)
